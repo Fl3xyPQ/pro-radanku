@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Radanku ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Přepínač režimu -->
+    <div class="theme-switcher">
+        <button id="themeButton" title="Změnít barevný režim">🌟</button>
+    </div>
+    
+    <!-- Digitální hodiny -->
+    <div class="clock-container">
+        <div id="clock" class="digital-clock"></div>
+        <div id="date" class="date-display"></div>
+    </div>
+    
+    <div class="container">
+        <div class="greeting-box">
+            <h1 class="fade-in">Ahoj Rarášku! 💕</h1>
+            <p class="fade-in-delay-1">Tato webovka je přání k pěknému večeru 🌙</p>
+            <p class="fade-in-delay-2"> Hvězdičky zapadly.. ✨</p>
+            
+            <div class="heart-button-container fade-in-delay-3">
+                <button id="loveButton" class="love-button">Klikni na mě pro překvapení ! 💖</button>
+            </div>
+            
+            <div id="messageBox" class="message-box hidden">
+                <p id="loveMessage"></p>
+            </div>
+            
+            <!-- Počitádlo navštěv -->
+            <div class="stats-container fade-in-delay-4">
+                <p class="stats-text">🎯 Kliknutí: <span id="clickCounter">0</span></p>
+            </div>
+            
+            <!-- Mini hra -->
+            <div class="game-container fade-in-delay-5">
+                <h3>Chyt emoji! 🎮</h3>
+                <div class="game-area" id="gameArea">
+                    <button id="startGameBtn" class="game-btn">Start hry!</button>
+                </div>
+                <div id="gameScore" class="game-score hidden">Skóre: <span id="score">0</span></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="hearts-container" id="heartsContainer"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
