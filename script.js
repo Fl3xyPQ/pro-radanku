@@ -1,4 +1,4 @@
-// Přátelské zprávy k zobrazení
+
 const friendlyMessages = [
     "Smrdíš, bež se osprchovat! 😊",
     "Oslavujeme už jen pár hodin do další školy! 🎉",
@@ -11,7 +11,7 @@ const friendlyMessages = [
     "Tonda má napad, napiš na MS Teams! Chce tě pozvat na RANDE!💡"
 ];
 
-// Digitální hodiny
+
 function updateClock() {
     const now = new Date();
     const hours = String(now.getHours()).padStart(2, '0');
@@ -27,7 +27,7 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock();
 
-// Počitádlo kliknǔtí
+
 let clickCount = 0;
 
 function updateClickCounter() {
@@ -36,7 +36,7 @@ function updateClickCounter() {
     localStorage.setItem('clickCount', clickCount);
 }
 
-// Načtení uloženého počtu
+
 if (localStorage.getItem('clickCount')) {
     clickCount = parseInt(localStorage.getItem('clickCount'));
     document.getElementById('clickCounter').textContent = clickCount;
@@ -86,7 +86,7 @@ function startGame() {
     document.getElementById('score').textContent = gameScore;
     document.getElementById('gameScore').classList.remove('hidden');
     
-    // Skryje tlačítko s animací
+    
     const btn = document.getElementById('startGameBtn');
     btn.style.opacity = '0';
     btn.style.transform = 'translate(-50%, -50%) scale(0.8)';
@@ -133,7 +133,7 @@ function spawnEmoji() {
     setTimeout(() => {
         if (emoji.parentNode && !emojiCaught) {
             emoji.remove();
-            endGame(); // Hra končí, pokud hráč nechytil emoji
+            endGame(); 
         }
     }, 3000);
 }
@@ -141,16 +141,16 @@ function spawnEmoji() {
 function endGame() {
     gameActive = false;
     
-    // Vyčistí herní pole
+   
     const emojis = document.querySelectorAll('.game-emoji');
     emojis.forEach(e => e.remove());
     
-    // Zobrazí tlačítko s animací
+   
     const btn = document.getElementById('startGameBtn');
     btn.textContent = `Konec! Skóre: ${gameScore} 🏆`;
     btn.style.display = 'block';
     
-    // Přidá animaci po krátkém zpoždění
+   
     setTimeout(() => {
         btn.style.opacity = '1';
         btn.style.transform = 'translate(-50%, -50%) scale(1)';
@@ -161,7 +161,7 @@ function endGame() {
     }, 2000);
 }
 
-// Vytváří plující srdíčka kontinuálně
+
 function createFloatingHeart() {
     const heartsContainer = document.getElementById('heartsContainer');
     const heart = document.createElement('div');
@@ -182,21 +182,21 @@ function createFloatingHeart() {
     
     heartsContainer.appendChild(heart);
     
-    // Odstraní srdíčko po ukončení animace
+   
     setTimeout(() => {
         heart.remove();
     }, 7000);
 }
 
-// Vytváří srdíčka v pravidelných intervalech
+
 setInterval(createFloatingHeart, 800);
 
-// Počáteční exploze srdíček
+
 for (let i = 0; i < 5; i++) {
     setTimeout(createFloatingHeart, i * 200);
 }
 
-// Interakce s tlačítkem
+
 const loveButton = document.getElementById('loveButton');
 const messageBox = document.getElementById('messageBox');
 const loveMessage = document.getElementById('loveMessage');
@@ -205,21 +205,21 @@ loveButton.addEventListener('click', function() {
     // Počítá kliknutí
     updateClickCounter();
     
-    // Získá náhodnou zprávu
+    
     const randomMessage = friendlyMessages[Math.floor(Math.random() * friendlyMessages.length)];
     
     // Aktualizuje zprávu
     loveMessage.textContent = randomMessage;
     
-    // Zobrazí box se zprávou
+    
     messageBox.classList.remove('hidden');
     
-    // Vytvoří výbuch srdíček
+    
     for (let i = 0; i < 10; i++) {
         setTimeout(createFloatingHeart, i * 100);
     }
     
-    // Animace tlačítka
+    
     loveButton.style.transform = 'scale(0.95)';
     setTimeout(() => {
         loveButton.style.transform = 'scale(1)';
@@ -262,3 +262,4 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
