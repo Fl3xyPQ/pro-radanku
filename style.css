@@ -95,7 +95,7 @@ p {
     margin: 0;
 }
 
-/* Floating hearts */
+/* Srdíčka */
 .hearts-container {
     position: fixed;
     top: 0;
@@ -130,7 +130,7 @@ p {
     }
 }
 
-/* Fade in animations */
+/* Animace */
 .fade-in {
     animation: fadeIn 1s ease-in;
 }
@@ -235,7 +235,7 @@ p {
     margin: 0;
 }
 
-/* Citáty */
+/* NOT USED */
 .quote-container {
     margin-top: 25px;
     padding: 20px;
@@ -267,7 +267,7 @@ p {
     transform: translateY(-2px);
 }
 
-/* Mini hra */
+/* Chyť emoji */
 .game-container {
     margin-top: 25px;
     padding: 20px;
@@ -347,7 +347,7 @@ p {
     }
 }
 
-/* Responsive design */
+/* Design - backend, NEŠAHAT */
 @media (max-width: 768px) {
     h1 {
         font-size: 2em;
@@ -366,3 +366,4 @@ p {
         font-size: 1em;
     }
 }
+
