@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
 }
 
 body {
@@ -13,6 +15,7 @@ body {
     align-items: center;
     overflow: hidden;
     position: relative;
+    -webkit-overflow-scrolling: touch;
 }
 
 .container {
@@ -95,7 +98,7 @@ p {
     margin: 0;
 }
 
-/* Srdíčka */
+/* Floating hearts */
 .hearts-container {
     position: fixed;
     top: 0;
@@ -130,7 +133,7 @@ p {
     }
 }
 
-/* Animace */
+/* Fade in animations */
 .fade-in {
     animation: fadeIn 1s ease-in;
 }
@@ -235,7 +238,7 @@ p {
     margin: 0;
 }
 
-/* NOT USED */
+/* Citáty */
 .quote-container {
     margin-top: 25px;
     padding: 20px;
@@ -267,7 +270,7 @@ p {
     transform: translateY(-2px);
 }
 
-/* Chyť emoji */
+/* Mini hra */
 .game-container {
     margin-top: 25px;
     padding: 20px;
@@ -347,8 +350,12 @@ p {
     }
 }
 
-/* Design - backend, NEŠAHAT */
+/* Responsive design */
 @media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+    
     h1 {
         font-size: 2em;
     }
@@ -358,12 +365,166 @@ p {
     }
     
     .greeting-box {
-        padding: 40px 25px;
+        padding: 30px 20px;
+        max-width: 95%;
     }
     
     .love-button {
         padding: 15px 30px;
         font-size: 1em;
+        min-height: 48px;
+        min-width: 48px;
+    }
+    
+    /* Hodiny na mobilu */
+    .clock-container {
+        top: 10px;
+        right: 10px;
+        padding: 10px 15px;
+    }
+    
+    .digital-clock {
+        font-size: 1.5em;
+    }
+    
+    .date-display {
+        font-size: 0.75em;
+    }
+    
+    /* Přepínač témat */
+    .theme-switcher {
+        top: 10px;
+        left: 10px;
+    }
+    
+    #themeButton {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5em;
+    }
+    
+    /* Herní kontejner */
+    .game-container {
+        padding: 15px;
+    }
+    
+    .game-area {
+        min-height: 250px;
+        padding: 15px;
+    }
+    
+    .game-emoji {
+        font-size: 2em;
+    }
+    
+    .game-btn {
+        min-height: 48px;
+        padding: 12px 20px;
+    }
+    
+    .game-score {
+        font-size: 1.1em;
+    }
+    
+    /* Statistiky */
+    .stats-container {
+        padding: 12px;
+    }
+    
+    .stats-text {
+        font-size: 1em;
+    }
+    
+    /* Message box */
+    .message-box {
+        padding: 20px;
+    }
+    
+    .message-box p {
+        font-size: 1.2em;
     }
 }
 
+/* Extra malá zařízení (iPhone SE, atd.) */
+@media (max-width: 375px) {
+    h1 {
+        font-size: 1.6em;
+    }
+    
+    .greeting-box {
+        padding: 20px 15px;
+    }
+    
+    .clock-container {
+        padding: 8px 12px;
+    }
+    
+    .digital-clock {
+        font-size: 1.2em;
+    }
+    
+    #themeButton {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3em;
+    }
+    
+    .game-area {
+        min-height: 200px;
+    }
+}
+
+/* Landscape orientace na mobilu */
+@media (max-width: 768px) and (orientation: landscape) {
+    .clock-container {
+        top: 5px;
+        right: 5px;
+        padding: 8px 12px;
+    }
+    
+    .digital-clock {
+        font-size: 1.2em;
+    }
+    
+    .theme-switcher {
+        top: 5px;
+        left: 5px;
+    }
+    
+    #themeButton {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .greeting-box {
+        padding: 20px;
+    }
+    
+    .game-area {
+        min-height: 150px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+        margin-bottom: 10px;
+    }
+}
+
+/* Touch optimalizace */
+@media (hover: none) and (pointer: coarse) {
+    /* Větší touch targety */
+    button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .game-emoji {
+        font-size: 2.5em;
+        padding: 10px;
+    }
+    
+    /* Zakázání double-tap zoom */
+    * {
+        touch-action: manipulation;
+    }
+}
